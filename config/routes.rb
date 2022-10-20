@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  get 'inventories/index'
-  get 'inventories/show'
-  get 'inventories/create'
-  get 'items/new'
-  get 'items/create'
+  resources :inventories, only: [:index, :show, :new, :create] do
+    resources :items, only: [:new, :create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "home#index"
 end
