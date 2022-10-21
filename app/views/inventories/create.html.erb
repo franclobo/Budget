@@ -1,2 +1,24 @@
-<h1>Inventories#create</h1>
-<p>Find me in app/views/inventories/create.html.erb</p>
+<div>
+  <header class="inventories">
+    <p><%= link_to "Back", inventories_path %></p>
+    <h1>NEW VATEGORY</h1>
+  </header>
+  <main>
+    <%= form_with url: "/inventories", method: :post, scope: :inventory, class:"form" do |form| %>
+      <div class="form__field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
+      <div class="form__field">
+        <%= form.label :icon %>
+        <%= form.text_field :icon %>
+      </div>
+      <div class="form__field">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </main>
+  <footer>
+    <div class="actions"><%= form.submit %></div>
+  </footer>
+</div>

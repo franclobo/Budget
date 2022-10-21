@@ -1,2 +1,14 @@
-<h1>Inventories#index</h1>
-<p>Find me in app/views/inventories/index.html.erb</p>
+<div>
+  <header class="inventories">
+    <h1>TRANSACTIONS</h1>
+    <ul>
+      <li><%= link_to "Most recent" %></li>
+      <li><%= link_to "Most ancient" %></li>
+    </ul>
+  </header>
+  <main>
+  </main>
+  <footer>
+    <p><%= link_to "NEW TRANSACTION", create_inventory_path %></p>
+  </footer>
+</div>

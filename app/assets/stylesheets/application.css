@@ -1,15 +1,98 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('/app/assets/fonts/proximanova-bold.otf');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('/app/assets/fonts/proximanova-light.otf');
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  font-family: 'Proxima Nova Bold', sans-serif;
+  background-color: #3778c2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+}
+
+h1 {
+  font-family: 'Proxima Nova Light', sans-serif;
+  text-align: center;
+  margin: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
+
+main img {
+  width: 100px;
+  height: 100px;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration li {
+  list-style: none;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.registration a {
+  text-decoration: none;
+  color: #3778c2;
+}
+
+footer {
+  font-family: 'Proxima Nova Light', sans-serif;
+  background-color: #5fb523;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  padding: 20px 0;
+}
+
+.inventories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inventories ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  list-style: none;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.inventories a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
