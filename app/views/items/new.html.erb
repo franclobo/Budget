@@ -1,6 +1,6 @@
 <div>
   <header class="inventories_new">
-    <h1>NEW ITEM</h1>
+    <h1>NEW TRANSACTION</h1>
     <ul>
       <li><%= link_to "<", inventories_path %></li>
       <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %></li>
@@ -31,8 +31,8 @@
           <% end %>
         </div>
       </div>
-      <footer>
-        <div class="actions"><%= form.submit "CREATE INTEM" %></div>
+      <footer class="index_footer">
+        <div class="actions"><%= form.submit "CREATE TRANSACTION" %></div>
       </footer>
       <% end %>
     </div>
