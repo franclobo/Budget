@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Inventory, type: :model do
   before do
     @user = User.create!(name: 'Francisco', email: 'francisco@mail.com', password: '123456')
-    @inventory = Inventory.create!(name: 'Inventory 1', icon: 'https://www.flaticon.com/svg/static/icons/svg/3523/3523063.svg', user_id: @user.id)
+    @inventory = Inventory.create!(name: 'Inventory 1',
+                                   icon: 'https://www.flaticon.com', user_id: @user.id)
   end
 
   it 'should have a name' do
@@ -11,11 +12,10 @@ RSpec.describe Inventory, type: :model do
   end
 
   it 'should have an icon' do
-    expect(@inventory.icon).to eq('https://www.flaticon.com/svg/static/icons/svg/3523/3523063.svg')
+    expect(@inventory.icon).to eq('https://www.flaticon.com')
   end
 
   it 'should have an user' do
     expect(@inventory.user_id).to eq(@user.id)
   end
 end
-

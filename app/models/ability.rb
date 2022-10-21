@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -9,7 +7,7 @@ class Ability
     return unless user
 
     can :manage, Inventory, author: user
-    can :manage, Item, author:user
+    can :manage, Item, author: user
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

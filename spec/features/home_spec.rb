@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Home', type: :feature do
   describe 'home#index' do
-    before (:each) do
+    before(:each) do
       visit root_path
     end
 

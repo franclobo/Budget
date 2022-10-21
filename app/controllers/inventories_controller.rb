@@ -1,7 +1,7 @@
 class InventoriesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
-  
+
   def index
     @inventories = Inventory.includes([:groups]).where(author: current_user)
   end
