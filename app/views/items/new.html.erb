@@ -1,19 +1,15 @@
 <div>
   <header class="inventories">
-    <p><%= link_to "Back", inventories_path %></p>
+    <p><%= link_to "<", inventories_path %></p>
     <h1>NEW ITEM</h1>
-    <% if user_signed_in? %>
-        <ul>
-          <li><%= link_to "Home", inventories_path %></li>
-          <li>    
-            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %>
-          </li>
-        </ul>
-      <% end %>
+    <ul>
+      <li><%= link_to "<", inventories_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+    </ul>
   </header>
   <main>
     <div>
-      <%= form_with model: @item, url: inventory_items_path(@inventory) do |form| %>
+      <%= form_with (model: @item, url: inventory_items_path(@inventory)) do |form| %>
       <div>
         <%= form.label :name %>
         <%= form.text_field :name, placeholder: "Item" %>
