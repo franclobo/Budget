@@ -1,2 +1,28 @@
-<h1>Inventories#show</h1>
-<p>Find me in app/views/inventories/show.html.erb</p>
+<div>
+  <header class="inventories">
+    <p><%= link_to "Back", inventories_path %></p>
+    <h1>TRANSACTIONS</h1>
+  </header>
+  <main>
+    <div>
+      <p>Total <%= @inventory.name %>: <%= @sum=0 %>
+      <% @items.each do |item| %>
+        <%= @sum += item.amount %>
+      <% end %>
+      <%= @sum %></p>
+      <div>
+        <% @items.each do |item| %>
+          <div>
+            <div>
+              <p><%= item.name %></p>
+            </div>
+              <p><%= item.amount %></p> 
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p><%= link_to "NEW TRANSACTION", new_inventory_item_path(@inventory) %></p>
+  </footer>
+</div>

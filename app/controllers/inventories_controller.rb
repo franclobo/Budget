@@ -1,6 +1,6 @@
 class InventoriesController < ApplicationController
   def index
-    @inventories = Inventory.includes([:classes]).where(author: current_user.id)
+    @inventories = Inventory.includes([:classes]).where(author: current_user)
   end
 
   def show

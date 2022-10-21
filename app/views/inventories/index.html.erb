@@ -7,8 +7,27 @@
     </ul>
   </header>
   <main>
+    <div>
+      <% @inventories.includes([:items]).each do |inventory| %>
+        <div>
+          <% @total = 0 %>
+          <div>
+            <img src="<%= inventory.icon %>">
+          </div>
+          <div>
+            <h2><%= link_to inventory.name, inventory_path(inventory) %></h2>
+          </div>
+          <div>
+           <% inventory.items.each do |item| %>
+            <% @total += item.amount %>
+          <% end %>
+          <p><%= @total %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </main>
   <footer>
-    <p><%= link_to "NEW TRANSACTION", create_inventory_path %></p>
+    <p><%= link_to "NEW TRANSACTION", new_inventory_path %></p>
   </footer>
 </div>

@@ -1,0 +1,21 @@
+<div>
+  <header class="inventories">
+    <p><%= link_to "Back", inventories_path %></p>
+    <h1>NEW INVENTORY</h1>
+  </header>
+  <main>
+    <%= form_with model: @inventory do |form| %>
+      <div>
+        <%= form.label :name %>
+        <%= form.text_field :name, placeholder: "Inventory" %>
+      </div>
+      <div>
+        <%= form.label :icon %>
+        <%= form.text_field :icon, placeholder: "Link" %>
+      </div>
+      <footer>
+        <div class="actions"><%= form.submit "CREATE INVENTORY" %></div>
+      </footer>
+    <% end %>
+  </main>
+</div>

@@ -1,2 +1,38 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div>
+  <header class="inventories">
+    <p><%= link_to "Back", inventories_path %></p>
+    <h1>NEW ITEM</h1>
+    <% if user_signed_in? %>
+        <ul>
+          <li><%= link_to "Home", inventories_path %></li>
+          <li>    
+            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %>
+          </li>
+        </ul>
+      <% end %>
+  </header>
+  <main>
+    <div>
+      <%= form_with model: @item, url: inventory_items_path(@inventory) do |form| %>
+      <div>
+        <%= form.label :name %>
+        <%= form.text_field :name, placeholder: "Item" %>
+      </div>
+      <div>
+        <%= form.label :amount %>
+        <%= form.number_field :amount, placeholder: "Amount" %>
+      </div>
+      <div>
+        <% @inventories.each do |inventory| %>
+          <div>
+            <%= inventory.name %>
+            <%= form.radio_button "inventory_ids[]", inventory.id, checked: @inventory.id == inventory.id %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="actions"><%= form.submit "CREATE INTEM" %></div>
+  </footer>
+</div>
