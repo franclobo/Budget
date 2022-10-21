@@ -1,24 +1,60 @@
-# README
+# Budget
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-Things you may want to cover:
+## Demo
 
-* Ruby version
+[Budget-app](https://budget-app20221013.herokuapp.com//)
 
-* System dependencies
+## Built With
 
-* Configuration
+- Visual Studio Code and GitHub.
+- Ruby on Rails.
+- Linters for RoR.
+- Gitflow.
+- Heroku
 
-* Database creation
+## Instalation
 
-* Database initialization
+- [Clone repository](git@github.com:franclobo/Budget.git)
 
-* How to run the test suite
+- bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+- Change the password in /config/database.yml if necessary.
 
-* Deployment instructions
+- rails db:create db:migrate
 
-* ...
+- rails server (open server in [localhost](http://localhost:3000/))
+
+## Testing
+
+- rspec .
+
+## Author
+
+## 👤 Francisco Borja
+
+- GitHub: [@franclobo](https://github.com/franclobo)
+
+- Twitter: [@pancho2788](https://twitter.com/Pancho2788)
+
+- LinkedIn: [Francisco Borja](https://www.linkedin.com/in/francisco-borja-lobato/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- Original [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
