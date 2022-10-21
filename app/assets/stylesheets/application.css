@@ -35,12 +35,16 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 350px;
 }
 
 main img {
   width: 100px;
   height: 100px;
+}
+
+.logo img {
+  width: 300px;
+  height: 300px;
 }
 
 .registration {
@@ -54,6 +58,7 @@ main img {
   list-style: none;
   margin: 10px 0;
   text-align: center;
+  font-size: 30px;
 }
 
 .registration a {
@@ -71,7 +76,9 @@ footer {
   padding: 20px 0;
 }
 
-.inventories {
+.inventories,
+.inventories_show,
+.inventories_new {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,7 +94,18 @@ footer {
   text-align: center;
 }
 
-.inventories a {
+.inventories_show ul,
+.inventories_new ul {
+  display: flex;
+  flex-direction: row;
+  gap: 250px;
+  list-style: none;
+  margin: 10px 0;
+}
+
+.inventories a,
+.inventories_show a,
+.inventories_new a {
   text-decoration: none;
   color: #fff;
 }
@@ -95,4 +113,93 @@ footer {
 footer a {
   text-decoration: none;
   color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.check {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions input {
+  background-color: #5fb523;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+}
+
+.name,
+.amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.items_container,
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 10px 0;
+  border-bottom: #434b54 solid 1px;
+  border-top: #434b54 solid 1px;
+}
+
+.new_inventory {
+  margin: 50px 0;
+}
+
+.new_inventory .name {
+  margin: 50px 0;
+  width: 100vw;
+  align-items: center;
+}
+
+.new_inventory footer {
+  margin-top: 50px;
+}
+
+.index_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.item a {
+  text-decoration: none;
+  color: #3778c2;
+}
+
+.item p a {
+  text-decoration: none;
+  color: red;
 }

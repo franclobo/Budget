@@ -1,5 +1,5 @@
 <div>
-  <header class="inventories">
+  <header class="inventories_show">
     <h1>TRANSACTIONS</h1>
     <ul>
       <li><%= link_to "<", inventories_path %></li>
@@ -7,25 +7,27 @@
     </ul>
   </header>
   <main>
-    <div>
-      <p>Total <%= @inventory.name %>: <%= @sum=0 %>
+    <div class="items_container">
+      <p>Total <%= @inventory.name %>: $<% @sum=0 %>
       <% @items.each do |item| %>
-        <%= @sum += item.amount %>
+        <% @sum += item.amount %>
       <% end %>
       <%= @sum %></p>
-      <div>
+      <div class="items">
         <% @items.each do |item| %>
-          <div>
+          <div class="item">
             <div>
               <p><%= item.name %></p>
             </div>
-              <p><%= item.amount %></p> 
+            <div>
+              <p>$<%= item.amount %></p>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
   </main>
-  <footer>
+  <footer class="index_footer">
     <p><%= link_to "NEW TRANSACTION", new_inventory_item_path(@inventory) %></p>
   </footer>
 </div>

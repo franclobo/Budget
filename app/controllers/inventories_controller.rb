@@ -1,19 +1,19 @@
 class InventoriesController < ApplicationController
-
+  before_action :authenticate_user!
   load_and_authorize_resource
   
   def index
-    @inventories = Inventory.includes([:classes]).where(author: current_user)
+    @inventories = Inventory.includes([:groups]).where(author: current_user)
   end
 
   def show
     @inventory = Inventory.find(params[:id])
-    @item = @inventory.item
+    @items = @inventory.items.order(created_at: :desc)
   end
 
   def create
     @inventory = Inventory.new(inventory_params)
-    @inventory.author = current_user.id
+    @inventory.author = current_user
     if @inventory.save
       redirect_to inventory_path(@inventory)
     else
@@ -21,14 +21,10 @@ class InventoriesController < ApplicationController
     end
   end
 
-  def most_recent
-    @inventories = Inventory.includes([:classes]).where(author: current_user.id).order(created_at: :desc)
-    render :index
-  end
-
-  def most_ancient
-    @inventories = Inventory.includes([:classes]).where(author: current_user.id).order(created_at: :asc)
-    render :index
+  def destroy
+    @inventory = Inventory.find(params[:id])
+    @inventory.destroy
+    redirect_to inventories_path
   end
 
   private

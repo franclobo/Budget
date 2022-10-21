@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_051133) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_155556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "classes", force: :cascade do |t|
-    t.bigint "item_id", null: false
+  create_table "groups", force: :cascade do |t|
     t.bigint "inventory_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["inventory_id"], name: "index_classes_on_inventory_id"
-    t.index ["item_id"], name: "index_classes_on_item_id"
+    t.index ["inventory_id"], name: "index_groups_on_inventory_id"
+    t.index ["item_id"], name: "index_groups_on_item_id"
   end
 
   create_table "inventories", force: :cascade do |t|
@@ -54,8 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_051133) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "classes", "inventories"
-  add_foreign_key "classes", "items"
+  add_foreign_key "groups", "inventories"
+  add_foreign_key "groups", "items"
   add_foreign_key "inventories", "users"
   add_foreign_key "items", "users"
 end

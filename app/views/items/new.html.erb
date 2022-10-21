@@ -1,6 +1,5 @@
 <div>
-  <header class="inventories">
-    <p><%= link_to "<", inventories_path %></p>
+  <header class="inventories_new">
     <h1>NEW ITEM</h1>
     <ul>
       <li><%= link_to "<", inventories_path %></li>
@@ -9,26 +8,34 @@
   </header>
   <main>
     <div>
-      <%= form_with (model: @item, url: inventory_items_path(@inventory)) do |form| %>
-      <div>
-        <%= form.label :name %>
-        <%= form.text_field :name, placeholder: "Item" %>
+      <div class="container">
+        <div>
+          <%= form_with(model: @item, url: inventory_items_path(@inventory)) do |form| %>
+            <div class="form">
+              <div class="name">
+                <%= form.label :name %>
+                <%= form.text_field :name, placeholder: "Item" %>
+              </div>
+              <div class="amount">
+                <%= form.label :amount %>
+                <%= form.number_field :amount, placeholder: "Amount" %>
+              </div>
+            </div>
+        </div>
+        <div class="check">
+          <% @inventories.each do |inventory| %>
+            <div>
+              <%= inventory.name %>
+              <%= check_box_tag "inventories_ids[]", inventory.id, inventory.id == @inventory.id %>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div>
-        <%= form.label :amount %>
-        <%= form.number_field :amount, placeholder: "Amount" %>
-      </div>
-      <div>
-        <% @inventories.each do |inventory| %>
-          <div>
-            <%= inventory.name %>
-            <%= form.radio_button "inventory_ids[]", inventory.id, checked: @inventory.id == inventory.id %>
-          </div>
-        <% end %>
-      </div>
+      <footer>
+        <div class="actions"><%= form.submit "CREATE INTEM" %></div>
+      </footer>
+      <% end %>
     </div>
   </main>
-  <footer>
-    <div class="actions"><%= form.submit "CREATE INTEM" %></div>
-  </footer>
+  
 </div>
