@@ -1,0 +1,24 @@
+<div>
+  <header class="inventories_show">
+    <h1>NEW CATEGORY</h1>
+    <ul>
+      <li><%= link_to "<", inventories_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+    </ul>
+  </header>
+  <main class="new_inventory">
+    <%= form_with model: @inventory do |form| %>
+      <div class="name">
+        <%= form.label :name %>
+        <%= form.text_field :name, placeholder: "Inventory" %>
+      </div>
+      <div class="name">
+        <%= form.label :icon %>
+        <%= form.text_field :icon, placeholder: "Link" %>
+      </div>
+      <footer class="index_footer">
+        <div class="actions"><%= form.submit "CREATE CATEGORY" %></div>
+      </footer>
+    <% end %>
+  </main>
+</div>
