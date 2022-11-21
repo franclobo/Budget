@@ -4,7 +4,14 @@ A mobile web application where you can manage your budget: you have a list of tr
 
 ## Demo
 
-[Budget](https://budget-app-21102022.herokuapp.com/)
+- [Budget](https://budget-app-21102022.herokuapp.com/)
+- ![image](https://user-images.githubusercontent.com/58642949/203124885-4507aa3c-85aa-4a1f-810c-250fd0502de2.png)
+- ![image](https://user-images.githubusercontent.com/58642949/203124949-677f8122-002e-430e-aa53-85bb9707a3dd.png)
+- ![image](https://user-images.githubusercontent.com/58642949/203125832-312cd73b-0e27-49e6-9024-7544f7da3199.png)
+- ![image](https://user-images.githubusercontent.com/58642949/203125929-563f87d1-8c23-4d77-83d8-acd5001e3ed9.png)
+- ![image](https://user-images.githubusercontent.com/58642949/203126134-f0107a96-89b3-45bc-b6b5-9a87a23eddc2.png)
+- ![image](https://user-images.githubusercontent.com/58642949/203126309-99a2de39-ef8d-4030-a305-156238f5e10e.png)
+
 
 ## Built With
 
