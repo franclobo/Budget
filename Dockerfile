@@ -29,7 +29,6 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
     rm -rf /tmp/node-build-master
 
-
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
@@ -45,24 +44,23 @@ RUN npm install -g yarn@$YARN_VERSION
 ENV PATH="/usr/local/node/bin:$PATH"
 
 # Install application gems
-COPY --link Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
     bundle exec bootsnap precompile --gemfile && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
 # Install node modules
-COPY --link package.json yarn.lock ./
+COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 # Copy application code
-COPY --link . .
+COPY . .
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
 
 # Final stage for app image
 FROM base
