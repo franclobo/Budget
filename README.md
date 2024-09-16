@@ -5,12 +5,16 @@ A mobile web application where you can manage your budget: you have a list of tr
 ## Demo
 
 - [Budget](https://budget-2024-44f4924cb6b3.herokuapp.com/)
-<br />
-- ![image](https://user-images.githubusercontent.com/58642949/203126520-d6f9f000-8f78-496c-b18e-a04cb95f83c5.png)
-- ![image](https://user-images.githubusercontent.com/58642949/203125832-312cd73b-0e27-49e6-9024-7544f7da3199.png)
-- ![image](https://user-images.githubusercontent.com/58642949/203125929-563f87d1-8c23-4d77-83d8-acd5001e3ed9.png)
-- ![image](https://user-images.githubusercontent.com/58642949/203126134-f0107a96-89b3-45bc-b6b5-9a87a23eddc2.png)
-- ![image](https://user-images.githubusercontent.com/58642949/203126309-99a2de39-ef8d-4030-a305-156238f5e10e.png)
+
+ ![image](https://user-images.githubusercontent.com/58642949/203126520-d6f9f000-8f78-496c-b18e-a04cb95f83c5.png)
+
+ ![image](https://user-images.githubusercontent.com/58642949/203125832-312cd73b-0e27-49e6-9024-7544f7da3199.png)
+ 
+ ![image](https://user-images.githubusercontent.com/58642949/203125929-563f87d1-8c23-4d77-83d8-acd5001e3ed9.png)
+ 
+ ![image](https://user-images.githubusercontent.com/58642949/203126134-f0107a96-89b3-45bc-b6b5-9a87a23eddc2.png)
+ 
+ ![image](https://user-images.githubusercontent.com/58642949/203126309-99a2de39-ef8d-4030-a305-156238f5e10e.png)
 
 
 ## Built With
